@@ -4,11 +4,11 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
 
-            <p class="centered"><a href="<?php echo base_url(); ?>profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+            <p class="centered"><a href="#"><img src="<?php echo base_url(); ?>assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
             <h5 class="centered">Patrik Bujna</h5>
 
             <li class="mt">
-                <a class="active" href="">
+                <a class="active" href="<?php echo base_url(); ?>">
                     <i class="fa fa-dashboard"></i>
                     <span>Domov</span>
                 </a>
