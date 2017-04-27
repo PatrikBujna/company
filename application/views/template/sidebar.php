@@ -20,11 +20,11 @@
                     <span>Tabuľky</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="#">Auto</a></li>
-                    <li><a  href="#">Cesta</a></li>
-                    <li><a  href="#">Kam</a></li>
+                    <li><a href="<?php echo base_url(); ?>index.php/Auto/index">Auto</a></li>
+                    <li><a href="<?php echo base_url(); ?>index.php/Cesta/index">Cesta</a></li>
+                    <li><a href="<?php echo base_url(); ?>index.php/Kam/index">Kam</a></li>
                     <li><a href="<?php echo base_url(); ?>index.php/Odkial/index">Odkial</a></li>
-                    <li><a  href="#">Služba</a></li>
+                    <li><a href="<?php echo base_url(); ?>index.php/Sluzba/index">Služba</a></li>
                     <li><a href="<?php echo base_url(); ?>index.php/Vodic/index">Vodič</a></li>
                 </ul>
             </li>
