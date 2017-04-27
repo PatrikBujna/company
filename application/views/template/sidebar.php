@@ -23,7 +23,7 @@
                     <li><a  href="#">Auto</a></li>
                     <li><a  href="#">Cesta</a></li>
                     <li><a  href="#">Kam</a></li>
-                    <li><a  href="#">Odkial</a></li>
+                    <li><a href="<?php echo base_url(); ?>index.php/Odkial/index">Odkial</a></li>
                     <li><a  href="#">Služba</a></li>
                     <li><a href="<?php echo base_url(); ?>index.php/Vodic/index">Vodič</a></li>
                 </ul>

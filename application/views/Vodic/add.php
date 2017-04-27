@@ -1,4 +1,4 @@
-<h3>Pridať záznam</h3>
+<center><h3>Pridať záznam</h3></center>
 <a href="<?php echo base_url('index.php/Vodic/index'); ?>" class="btn btn-default">Späť</a>
 <form action="<?php echo base_url('index.php/Vodic/submit') ?>" method="post" class="form-horizontal">
     <div class="form-group">
@@ -22,7 +22,7 @@
     <div class="form-group">
         <label class="col-md-2 text-right"></label>
         <div class="col-md-10">
-            <input type="submit" name="btnSave" class="btn btn-primary" value="Vložiť">
+            <button type="submit" name="btnSave" class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
         </div>
     </div>
 </form>
