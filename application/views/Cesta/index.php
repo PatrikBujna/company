@@ -1,0 +1,58 @@
+<?php
+if($this->session->flashdata('success_msg')){
+    ?>
+    <div class="alert alert-success">
+        <?php echo $this->session->flashdata('success_msg'); ?>
+    </div>
+    <?php
+}
+?>
+
+
+<?php
+if($this->session->flashdata('error_msg')){
+    ?>
+    <div class="alert alert-success">
+        <?php echo $this->session->flashdata('error_msg'); ?>
+    </div>
+    <?php
+}
+?>
+
+<center><h3>Tabuľka Odkial &nbsp;&nbsp;
+        <a href="<?php echo base_url('index.php/Cesta/add'); ?>" class="btn btn-success btn-xs""><i class="fa fa-check">&nbsp;Pridať záznam</i></a></h3></center>
+<table class="table table-bordered table-responsive">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <th>Odkial_ID</th>
+        <th>Kam_ID</th>
+        <th>Auto_ID</th>
+        <th>Cena</th>
+        <th>Datum</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    if($cesta){
+        foreach($cesta as $cesta){
+            ?>
+            <tr>
+                <td><?php echo $cesta->ID; ?></td>
+                <td><?php echo $cesta->Odkial_ID; ?></td>
+                <td><?php echo $cesta->Kam_ID;; ?></td>
+                <td><?php echo $cesta->Auto_ID; ?></td>
+                <td><?php echo $cesta->Cena; ?></td>
+                <td><?php echo $cesta->Datum; ?></td>
+                <td>
+                    <a href="<?php echo base_url('index.php/Cesta/edit/'.$cesta->ID); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                    <a href="<?php echo base_url('index.php/Cesta/delete/'.$cesta->ID); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Naozaj chcete vymazať tento záznam?');"><i class="fa fa-trash-o "></i></a>
+                </td>
+            </tr>
+            <?php
+        }
+    }
+    ?>
+    </tbody>
+</table>
