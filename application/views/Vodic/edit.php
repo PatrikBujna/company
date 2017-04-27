@@ -1,4 +1,3 @@
-
 <h3>Zmena záznamu</h3>
 <a href="<?php echo base_url('index.php/Vodic/index'); ?>" class="btn btn-default">Späť</a>
 <form action="<?php echo base_url('index.php/Vodic/update') ?>" method="post" class="form-horizontal">
@@ -24,7 +23,7 @@
     <div class="form-group">
         <label class="col-md-2 text-right"></label>
         <div class="col-md-10">
-            <input type="submit" name="btnUpdate" class="btn btn-primary" value="Zmeň">
+            <button type="submit" name="btnSave" class="btn btn-success btn-xs"><i class="fa fa-check">&nbsp;Zmeň</i></button>
         </div>
     </div>
 </form>

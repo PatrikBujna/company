@@ -40,8 +40,8 @@ if($this->session->flashdata('error_msg')){
                 <td><?php echo $odkial->Ulica; ?></td>
                 <td><?php echo $odkial->Mesto; ?></td>
                 <td>
-                    <a href="<?php echo base_url('index.php/Vodic/edit/'.$odkial->ID); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                    <a href="<?php echo base_url('index.php/Vodic/delete/'.$odkial->ID); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Naozaj chcete vymazať tento záznam?');"><i class="fa fa-trash-o "></i></a>
+                    <a href="<?php echo base_url('index.php/Odkial/edit/'.$odkial->ID); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                    <a href="<?php echo base_url('index.php/Odkial/delete/'.$odkial->ID); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Naozaj chcete vymazať tento záznam?');"><i class="fa fa-trash-o "></i></a>
                 </td>
             </tr>
             <?php

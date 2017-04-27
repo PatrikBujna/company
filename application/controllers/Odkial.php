@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Vodic extends CI_Controller{
+class Odkial extends CI_Controller{
 
     function __construct(){
         parent:: __construct();
@@ -9,7 +9,7 @@ class Vodic extends CI_Controller{
     }
 
     function index(){
-        $data['vodic'] = $this->m->getOdkial();
+        $data['odkial'] = $this->m->getOdkial();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('Odkial/index', $data);
@@ -34,7 +34,7 @@ class Vodic extends CI_Controller{
     }
 
     public function edit($id){
-        $data['vodic'] = $this->m->getOdkialById($id);
+        $data['odkial'] = $this->m->getOdkialById($id);
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('Odkial/edit', $data);
