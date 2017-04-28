@@ -5,7 +5,7 @@
     <div class="form-group">
         <label for="title" class="col-md-1 text-right">Vodic_ID</label>
         <div class="col-md-10">
-            <select class="form-control">
+            <select class="form-control" name="vodic_id">
                 <?php
                 if($sluzba){
                     foreach($sluzba as $sluzba){

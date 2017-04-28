@@ -3,7 +3,7 @@
 <form action="<?php echo base_url('index.php/Cesta/update') ?>" method="post" class="form-horizontal">
     <input type="hidden" name="txt_hidden" value="<?php echo $id->ID; ?>">
     <div class="form-group">
-        <label for="title" class="col-md-1 text-right">Odkial_ID</label>
+        <label for="title" class="col-md-1 text-right">Odkial</label>
         <div class="col-md-10">
             <select class="form-control" name="odkial_id">
                 <?php
@@ -12,11 +12,11 @@
                         if($odkial->Odkial_ID == $id->Odkial_ID) {
                             ?>
                             <option selected
-                                    value="<?php echo $odkial->Odkial_ID; ?>"><?php echo $odkial->Odkial_ID; ?></option>
+                                    value="<?php echo $odkial->Ulica; ?> <?php echo $odkial->Mesto; ?>"><?php echo $odkial->Ulica; ?>, <?php echo $odkial->Mesto; ?></option>
                             <?php
                         }else {
                             ?>
-                            <option value="<?php echo $odkial->Odkial_ID; ?>"><?php echo $odkial->Odkial_ID; ?></option>
+                            <option value="<?php echo $odkial->Ulica; ?> <?php echo $odkial->Mesto; ?>"><?php echo $odkial->Ulica; ?>, <?php echo $odkial->Mesto; ?></option>
                             <?php
                         }
                     }

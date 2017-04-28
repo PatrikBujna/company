@@ -25,9 +25,9 @@ if($this->session->flashdata('error_msg')){
     <thead>
     <tr>
         <td>ID</td>
-        <th>Odkial_ID</th>
-        <th>Kam_ID</th>
-        <th>Auto_ID</th>
+        <th>Odkial</th>
+        <th>Kam</th>
+        <th>Auto</th>
         <th>Cena</th>
         <th>Datum</th>
         <th>Action</th>
@@ -40,9 +40,9 @@ if($this->session->flashdata('error_msg')){
             ?>
             <tr>
                 <td><?php echo $cesta->ID; ?></td>
-                <td><?php echo $cesta->Odkial_ID; ?></td>
-                <td><?php echo $cesta->Kam_ID;; ?></td>
-                <td><?php echo $cesta->Auto_ID; ?></td>
+                <td><?php echo $cesta->oUlica; ?>, <?php echo $cesta->oMesto; ?></td>
+                <td><?php echo $cesta->kUlica; ?>, <?php echo $cesta->kMesto; ?></td>
+                <td><?php echo $cesta->Znacka; ?> <?php echo $cesta->Typ; ?></td>
                 <td><?php echo $cesta->Cena; ?></td>
                 <td><?php echo $cesta->Datum; ?></td>
                 <td>
