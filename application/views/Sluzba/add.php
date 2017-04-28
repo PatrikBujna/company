@@ -8,7 +8,7 @@
                     if($sluzba){
                         foreach($sluzba as $sluzba){
                             ?>
-                                <option value="<?php echo $sluzba->Vodic_ID; ?>"><?php echo $sluzba->Vodic_ID; ?></option>
+                                <option value="<?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?>"><?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?></option>
                             <?php
                         }
                     }

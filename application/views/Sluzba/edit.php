@@ -12,11 +12,11 @@
                         if($sluzba->Vodic_ID == $id->Vodic_ID) {
                             ?>
                             <option selected
-                                    value="<?php echo $sluzba->Vodic_ID; ?>"><?php echo $sluzba->Vodic_ID; ?></option>
+                                    value="<?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?>"><?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?></option>
                             <?php
                         }else {
                             ?>
-                            <option value="<?php echo $sluzba->Vodic_ID; ?>"><?php echo $sluzba->Vodic_ID; ?></option>
+                            <option value="<?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?>"><?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?></option>
                             <?php
                         }
                     }

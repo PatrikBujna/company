@@ -25,7 +25,7 @@ if($this->session->flashdata('error_msg')){
     <thead>
     <tr>
         <td>ID</td>
-        <th>Vodic_ID</th>
+        <th>Vodic</th>
         <th>Datum</th>
         <th>Action</th>
     </tr>
@@ -37,7 +37,7 @@ if($this->session->flashdata('error_msg')){
             ?>
             <tr>
                 <td><?php echo $sluzba->ID; ?></td>
-                <td><?php echo $sluzba->Vodic_ID; ?></td>
+                <td><?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?></td>
                 <td><?php echo $sluzba->Datum; ?></td>
                 <td>
                     <a href="<?php echo base_url('index.php/Sluzba/edit/'.$sluzba->ID); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>

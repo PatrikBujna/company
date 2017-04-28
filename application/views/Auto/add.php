@@ -1,7 +1,7 @@
 <center><h3>Pridať záznam</h3></center><br>
 <form action="<?php echo base_url('index.php/Auto/submit') ?>" method="post" class="form-horizontal">
     <div class="form-group">
-        <label for="title" class="col-md-1 text-right">Vodic_ID</label>
+        <label for="title" class="col-md-1 text-right">Vodic</label>
         <div class="col-md-10">
             <select class="form-control" name="vodic_id">
                 <?php

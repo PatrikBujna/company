@@ -5,7 +5,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Sluzba_m extends CI_Model{
 
     public function getSluzba(){
-        $query = $this->db->get('Sluzba');
+        $query = $this->db->query("SELECT s.ID, s.Datum, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Sluzba s INNER JOIN Vodic v ON s.Vodic_ID = v.ID");
+
         if($query->num_rows() > 0){
             return $query->result();
         }else{
@@ -14,7 +15,7 @@ class Sluzba_m extends CI_Model{
     }
 
     public function getSluzbaGroupID(){
-        $query = $this->db->query("SELECT Vodic_ID FROM Sluzba GROUP BY Vodic_ID");
+        $query = $this->db->query("SELECT s.Vodic_ID, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Sluzba s INNER JOIN Vodic v ON s.Vodic_ID = v.ID GROUP BY s.Vodic_ID");
 
         if($query->num_rows() > 0){
             return $query->result();
