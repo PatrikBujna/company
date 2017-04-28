@@ -17,9 +17,10 @@ class Sluzba extends CI_Controller{
     }
 
     public function add(){
+        $data['sluzba'] = $this->m->getSluzbaGroupID();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
-        $this->load->view('Sluzba/add');
+        $this->load->view('Sluzba/add', $data);
         $this->load->view('template/footer');
     }
 
@@ -60,5 +61,6 @@ class Sluzba extends CI_Controller{
         }
         redirect(base_url('index.php/Sluzba/index'));
     }
+
 
 }

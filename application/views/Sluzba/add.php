@@ -4,13 +4,28 @@
     <div class="form-group">
         <label for="title" class="col-md-2 text-right">Vodic_ID</label>
         <div class="col-md-10">
-            <input type="text" name="vodic_id" class="form-control" required>
+
+
+            <select class="form-control">
+                <?php
+                    if($sluzba){
+                        foreach($sluzba as $sluzba){
+                            ?>
+                                <option value="<?php echo $sluzba->Vodic_ID; ?>"><?php echo $sluzba->Vodic_ID; ?></option>
+                            <?php
+                        }
+                    }
+                ?>
+
+            </select>
+
+
         </div>
     </div>
     <div class="form-group">
         <label for="description" class="col-md-2 text-right">Datum</label>
         <div class="col-md-10">
-            <input type="text" name="datum" class="form-control" required>
+            <input type="text" name="datum" class="form-control" placeholder="RRRR-MM-DD" required>
         </div>
     </div>
     <div class="form-group">
