@@ -1,35 +1,49 @@
-<center><h3>Pridať záznam</h3></center>
-<a href="<?php echo base_url('index.php/Auto/index'); ?>" class="btn btn-default">Späť</a>
+<center><h3>Pridať záznam</h3></center><br>
 <form action="<?php echo base_url('index.php/Auto/submit') ?>" method="post" class="form-horizontal">
     <div class="form-group">
-        <label for="title" class="col-md-2 text-right">Vodic_ID</label>
+        <label for="title" class="col-md-1 text-right">Vodic_ID</label>
         <div class="col-md-10">
-            <input type="text" name="vodic_id" class="form-control" required>
+            <select class="form-control" name="vodic_id">
+                <?php
+                if($vodic){
+                    foreach($vodic as $vodic){
+                        ?>
+                        <option value="<?php echo $vodic->Vodic_ID; ?>"><?php echo $vodic->Vodic_ID; ?></option>
+                        <?php
+                    }
+                }
+                ?>
+            </select>
         </div>
     </div>
+
     <div class="form-group">
-        <label for="description" class="col-md-2 text-right">Znacka</label>
+        <label for="description" class="col-md-1 text-right">Znacka</label>
         <div class="col-md-10">
             <input type="text" name="znacka" class="form-control" required>
         </div>
     </div>
     <div class="form-group">
-        <label for="title" class="col-md-2 text-right">Typ</label>
+        <label for="title" class="col-md-1 text-right">Typ</label>
         <div class="col-md-10">
             <input type="text" name="typ" class="form-control" required>
         </div>
     </div>
     <div class="form-group">
-        <label for="description" class="col-md-2 text-right">SPZ</label>
+        <label for="description" class="col-md-1 text-right">SPZ</label>
         <div class="col-md-10">
             <input type="text" name="spz" class="form-control" required>
         </div>
     </div>
-    <div class="form-group">
-        <label class="col-md-2 text-right"></label>
-        <div class="col-md-10">
-            <button type="submit" name="btnSave" class="btn btn-success btn-xs"><i class="fa fa-check">&nbsp;Pridať</i></button>
+
+    <center>
+        <div class="form-group">
+            <label class="col-md-1 text-right"></label>
+            <div class="col-md-10">
+                <a href="<?php echo base_url('index.php/Auto/index'); ?>"<button class="btn btn-danger btn-xs"><span class="glyphicon">&#xe257;Späť</span></button></a>
+                &nbsp;<button type="submit" name="btnSave" class="btn btn-success btn-xs"><i class="fa fa-check">&nbsp;Pridaj</i></button>
+            </div>
         </div>
-    </div>
+    </center>
 </form>
 

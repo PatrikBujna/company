@@ -13,6 +13,36 @@ class Cesta_m extends CI_Model{
         }
     }
 
+    public function getOdkialGroupID(){
+        $query = $this->db->query("SELECT Odkial_ID FROM Cesta GROUP BY Odkial_ID");
+
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
+
+    public function getKamGroupID(){
+        $query = $this->db->query("SELECT Kam_ID FROM Cesta GROUP BY Kam_ID");
+
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
+
+    public function getAutoGroupID(){
+        $query = $this->db->query("SELECT Auto_ID FROM Cesta GROUP BY Auto_ID");
+
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
+
     public function submit(){
         $field = array(
             'Odkial_ID'=>$this->input->post('odkial_id'),

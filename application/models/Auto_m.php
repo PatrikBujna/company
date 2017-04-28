@@ -13,6 +13,16 @@ class Auto_m extends CI_Model{
         }
     }
 
+    public function getAutoGroupID(){
+        $query = $this->db->query("SELECT Vodic_ID FROM Auto GROUP BY Vodic_ID");
+
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
+
     public function submit(){
         $field = array(
             'Vodic_ID'=>$this->input->post('vodic_id'),

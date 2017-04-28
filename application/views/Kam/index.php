@@ -19,8 +19,8 @@ if($this->session->flashdata('error_msg')){
 }
 ?>
 
-<center><h3>Tabuľka Odkial &nbsp;&nbsp;
-        <a href="<?php echo base_url('index.php/Kam/add'); ?>" class="btn btn-success btn-xs""><i class="fa fa-check">&nbsp;Pridať záznam</i></a></h3></center>
+<center><h3>Tabuľka Kam &nbsp;&nbsp;
+        <a href="<?php echo base_url('index.php/Kam/add'); ?>" class="btn btn-success btn-xs""><i class="fa fa-check">&nbsp;Pridať záznam</i></a></h3></center><br>
 <table class="table table-bordered table-responsive">
     <thead>
     <tr>

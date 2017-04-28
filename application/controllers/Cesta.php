@@ -17,9 +17,12 @@ class Cesta extends CI_Controller{
     }
 
     public function add(){
+        $data['odkial'] = $this->m->getOdkialGroupID();
+        $data['kam'] = $this->m->getKamGroupID();
+        $data['auto'] = $this->m->getAutoGroupID();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
-        $this->load->view('Cesta/add');
+        $this->load->view('Cesta/add', $data);
         $this->load->view('template/footer');
     }
 
@@ -34,7 +37,10 @@ class Cesta extends CI_Controller{
     }
 
     public function edit($id){
-        $data['cesta'] = $this->m->getCestaById($id);
+        $data['id'] = $this->m->getCestaById($id);
+        $data['odkial'] = $this->m->getOdkialGroupID();
+        $data['kam'] = $this->m->getKamGroupID();
+        $data['auto'] = $this->m->getAutoGroupID();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('Cesta/edit', $data);

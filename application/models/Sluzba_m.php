@@ -15,6 +15,7 @@ class Sluzba_m extends CI_Model{
 
     public function getSluzbaGroupID(){
         $query = $this->db->query("SELECT Vodic_ID FROM Sluzba GROUP BY Vodic_ID");
+
         if($query->num_rows() > 0){
             return $query->result();
         }else{

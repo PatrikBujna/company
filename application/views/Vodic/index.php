@@ -20,7 +20,7 @@ if($this->session->flashdata('error_msg')){
 ?>
 
 <center><h3>Tabuľka Vodič &nbsp;&nbsp;
-        <a href="<?php echo base_url('index.php/Odkial/add'); ?>" class="btn btn-success btn-xs""><i class="fa fa-check">&nbsp;Pridať záznam</i></a></h3></center>
+        <a href="<?php echo base_url('index.php/Vodic/add'); ?>" class="btn btn-success btn-xs""><i class="fa fa-check">&nbsp;Pridať záznam</i></a></h3></center><br>
 <table class="table table-bordered table-responsive">
     <thead>
     <tr>

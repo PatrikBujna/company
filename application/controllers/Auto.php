@@ -17,9 +17,10 @@ class Auto extends CI_Controller{
     }
 
     public function add(){
+        $data['vodic'] = $this->m->getAutoGroupID();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
-        $this->load->view('Auto/add');
+        $this->load->view('Auto/add', $data);
         $this->load->view('template/footer');
     }
 
@@ -35,6 +36,7 @@ class Auto extends CI_Controller{
 
     public function edit($id){
         $data['auto'] = $this->m->getAutoById($id);
+        $data['vodic'] = $this->m->getAutoGroupID();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('Auto/edit', $data);
