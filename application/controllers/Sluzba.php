@@ -35,7 +35,8 @@ class Sluzba extends CI_Controller{
     }
 
     public function edit($id){
-        $data['sluzba'] = $this->m->getSluzbaById($id);
+        $data['id'] = $this->m->getSluzbaById($id);
+        $data['sluzba'] = $this->m->getSluzbaGroupID();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('Sluzba/edit', $data);
