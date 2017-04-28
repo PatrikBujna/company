@@ -3,7 +3,7 @@
 <form action="<?php echo base_url('index.php/Auto/update') ?>" method="post" class="form-horizontal">
     <input type="hidden" name="txt_hidden" value="<?php echo $auto->ID; ?>">
     <div class="form-group">
-        <label for="title" class="col-md-1 text-right">Vodic_ID</label>
+        <label for="title" class="col-md-1 text-right">Vodic</label>
         <div class="col-md-10">
             <select class="form-control" name="vodic_id">
                 <?php
@@ -12,11 +12,11 @@
                         if($vodic->Vodic_ID == $auto->Vodic_ID) {
                             ?>
                             <option selected
-                                    value="<?php echo $vodic->Vodic_ID; ?>"><?php echo $vodic->Vodic_ID; ?></option>
+                                    value="<?php echo $vodic->vMeno; ?> <?php echo $vodic->vPriezvisko; ?>"><?php echo $vodic->vMeno; ?> <?php echo $vodic->vPriezvisko; ?></option>
                             <?php
                         }else {
                             ?>
-                            <option value="<?php echo $vodic->Vodic_ID; ?>"><?php echo $vodic->Vodic_ID; ?></option>
+                            <option value="<?php echo $vodic->vMeno; ?> <?php echo $vodic->vPriezvisko; ?>"><?php echo $vodic->vMeno; ?> <?php echo $vodic->vPriezvisko; ?></option>
                             <?php
                         }
                     }

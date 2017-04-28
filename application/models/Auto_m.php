@@ -5,7 +5,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Auto_m extends CI_Model{
 
     public function getAuto(){
-        $query = $this->db->get('Auto');
+        $query = $this->db->query("SELECT a.ID, a.Znacka, a.Typ, a.SPZ, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Auto a INNER JOIN Vodic v ON a.Vodic_ID = v.ID");
+
         if($query->num_rows() > 0){
             return $query->result();
         }else{
@@ -14,7 +15,7 @@ class Auto_m extends CI_Model{
     }
 
     public function getAutoGroupID(){
-        $query = $this->db->query("SELECT Vodic_ID FROM Auto GROUP BY Vodic_ID");
+        $query = $this->db->query("SELECT a.Vodic_ID, a.Znacka, a.Typ, a.SPZ, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Auto a INNER JOIN Vodic v ON a.Vodic_ID = v.ID GROUP BY a.Vodic_ID");
 
         if($query->num_rows() > 0){
             return $query->result();

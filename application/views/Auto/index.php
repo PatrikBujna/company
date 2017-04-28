@@ -25,7 +25,7 @@ if($this->session->flashdata('error_msg')){
     <thead>
     <tr>
         <td>ID</td>
-        <th>Vodic_ID</th>
+        <th>Vodic</th>
         <th>Znacka</th>
         <th>Typ</th>
         <th>SPZ</th>
@@ -39,7 +39,7 @@ if($this->session->flashdata('error_msg')){
             ?>
             <tr>
                 <td><?php echo $auto->ID; ?></td>
-                <td><?php echo $auto->Vodic_ID; ?></td>
+                <td><?php echo $auto->vMeno; ?> <?php echo $auto->vPriezvisko; ?></td>
                 <td><?php echo $auto->Znacka; ?></td>
                 <td><?php echo $auto->Typ; ?></td>
                 <td><?php echo $auto->SPZ; ?></td>
