@@ -31,10 +31,8 @@ class Sluzba_m extends CI_Model{
         $meno = $parts[0];
         $priezvisko = $parts[1];
 
-
         $query = $this->db->query("SELECT ID FROM Vodic 
                                     WHERE Meno LIKE '$meno' AND Priezvisko LIKE '$priezvisko'");
-
         $result = $query->result();
         $ID = $result[0]->ID;
 

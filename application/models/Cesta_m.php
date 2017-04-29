@@ -48,10 +48,88 @@ class Cesta_m extends CI_Model{
     }
 
     public function submit(){
+        //odkial
+        $str = $this->input->post('odkial_id');
+        $boolean = 1;
+        $ulica = "";
+        $mesto = "";
+        $parts = explode(" ", $str);
+
+        $arrlength = count($parts);
+        for($x = 0; $x < $arrlength; $x++) {
+            if($boolean == 1)
+                $ulica = $ulica . " " . $parts[$x];
+            else
+                $mesto = $mesto . " " . $parts[$x];
+
+            if (stristr($parts[$x], ',')) {
+                $boolean = 0;
+            }
+        }
+        $ulica = substr($ulica, 0, -1);
+        $ulica = substr($ulica, 1);
+        $mesto = substr($mesto, 1);
+
+        $query = $this->db->query("SELECT ID FROM Odkial WHERE Ulica LIKE '$ulica' AND Mesto LIKE '$mesto'");
+        $result = $query->result();
+        $ID_odkial = $result[0]->ID;
+
+        //kam
+        $str = $this->input->post('kam_id');
+        $boolean = 1;
+        $ulica = "";
+        $mesto = "";
+        $parts = explode(" ", $str);
+
+        $arrlength = count($parts);
+        for($x = 0; $x < $arrlength; $x++) {
+            if($boolean == 1)
+                $ulica = $ulica . " " . $parts[$x];
+            else
+                $mesto = $mesto . " " . $parts[$x];
+
+            if (stristr($parts[$x], ',')) {
+                $boolean = 0;
+            }
+        }
+        $ulica = substr($ulica, 0, -1);
+        $ulica = substr($ulica, 1);
+        $mesto = substr($mesto, 1);
+
+        $query = $this->db->query("SELECT ID FROM Kam WHERE Ulica LIKE '$ulica' AND Mesto LIKE '$mesto'");
+        $result = $query->result();
+        $ID_kam = $result[0]->ID;
+
+        //auto
+        $str = $this->input->post('auto_id');
+        $boolean = 1;
+        $znacka = "";
+        $typ = "";
+        $parts = explode(" ", $str);
+
+        $arrlength = count($parts);
+        for($x = 0; $x < $arrlength; $x++) {
+            if($boolean == 1)
+                $znacka = $znacka . " " . $parts[$x];
+            else
+                $typ = $typ . " " . $parts[$x];
+
+            if (stristr($parts[$x], ',')) {
+                $boolean = 0;
+            }
+        }
+        $znacka = substr($znacka, 0, -1);
+        $znacka = substr($znacka, 1);
+        $typ = substr($typ, 1);
+
+        $query = $this->db->query("SELECT ID FROM Auto WHERE Znacka LIKE '$znacka' AND Typ LIKE '$typ'");
+        $result = $query->result();
+        $ID_auto = $result[0]->ID;
+
         $field = array(
-            'Odkial_ID'=>$this->input->post('odkial_id'),
-            'Kam_ID'=>$this->input->post('kam_id'),
-            'Auto_ID'=>$this->input->post('auto_id'),
+            'Odkial_ID'=>$ID_odkial,
+            'Kam_ID'=>$ID_kam,
+            'Auto_ID'=>$ID_auto,
             'Cena'=>$this->input->post('cena'),
             'Datum'=>$this->input->post('datum')
         );

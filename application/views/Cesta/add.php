@@ -2,14 +2,14 @@
 
 <form action="<?php echo base_url('index.php/Cesta/submit') ?>" method="post" class="form-horizontal">
     <div class="form-group">
-        <label for="title" class="col-md-1 text-right">Odkial_ID</label>
+        <label for="title" class="col-md-1 text-right">Odkial</label>
         <div class="col-md-10">
             <select class="form-control" name="odkial_id">
                 <?php
                 if($odkial){
                     foreach($odkial as $odkial){
                         ?>
-                        <option value="<?php echo $odkial->Ulica; ?> <?php echo $odkial->Mesto; ?>"><?php echo $odkial->Ulica; ?>, <?php echo $odkial->Mesto; ?></option>
+                        <option value="<?php echo $odkial->Ulica;?>, <?php echo $odkial->Mesto;?>"><?php echo $odkial->Ulica;?>, <?php echo $odkial->Mesto;?></option>
                         <?php
                     }
                 }
@@ -19,14 +19,14 @@
     </div>
 
     <div class="form-group">
-        <label for="title" class="col-md-1 text-right">Kam_ID</label>
+        <label for="title" class="col-md-1 text-right">Kam</label>
         <div class="col-md-10">
             <select class="form-control" name="kam_id">
                 <?php
                 if($kam){
                     foreach($kam as $kam){
                         ?>
-                        <option value="<?php echo $kam->Ulica; ?> <?php echo $kam->Mesto; ?>"><?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?></option>
+                        <option value="<?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?>"><?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?></option>
                         <?php
                     }
                 }
@@ -36,14 +36,14 @@
     </div>
 
     <div class="form-group">
-        <label for="title" class="col-md-1 text-right">Auto_ID</label>
+        <label for="title" class="col-md-1 text-right">Auto</label>
         <div class="col-md-10">
             <select class="form-control" name="auto_id">
                 <?php
                 if($auto){
                     foreach($auto as $auto){
                         ?>
-                        <option value="<?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?>"><?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?></option>
+                        <option value="<?php echo $auto->Znacka; ?>, <?php echo $auto->Typ; ?>"><?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?></option>
                         <?php
                     }
                 }
