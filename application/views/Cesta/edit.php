@@ -9,14 +9,14 @@
                 <?php
                 if($odkial){
                     foreach($odkial as $odkial){
-                        if($odkial->Odkial_ID == $id->Odkial_ID) {
+                        if($odkial->ID == $id->Odkial_ID) {
                             ?>
                             <option selected
-                                    value="<?php echo $odkial->Ulica; ?> <?php echo $odkial->Mesto; ?>"><?php echo $odkial->Ulica; ?>, <?php echo $odkial->Mesto; ?></option>
+                                    value="<?php echo $odkial->Ulica; ?>, <?php echo $odkial->Mesto; ?>"><?php echo $odkial->Ulica; ?>, <?php echo $odkial->Mesto; ?></option>
                             <?php
                         }else {
                             ?>
-                            <option value="<?php echo $odkial->Ulica; ?> <?php echo $odkial->Mesto; ?>"><?php echo $odkial->Ulica; ?>, <?php echo $odkial->Mesto; ?></option>
+                            <option value="<?php echo $odkial->Ulica; ?>, <?php echo $odkial->Mesto; ?>"><?php echo $odkial->Ulica; ?>, <?php echo $odkial->Mesto; ?></option>
                             <?php
                         }
                     }
@@ -27,20 +27,20 @@
     </div>
 
     <div class="form-group">
-        <label for="title" class="col-md-1 text-right">Kam_ID</label>
+        <label for="title" class="col-md-1 text-right">Kam</label>
         <div class="col-md-10">
             <select class="form-control" name="kam_id">
                 <?php
                 if($kam){
                     foreach($kam as $kam){
-                        if($kam->Kam_ID == $id->Kam_ID) {
+                        if($kam->ID == $id->Kam_ID) {
                             ?>
                             <option selected
-                                    value="<?php echo $kam->Ulica; ?> <?php echo $kam->Mesto; ?>"><?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?></option>
+                                    value="<?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?>"><?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?></option>
                             <?php
                         }else {
                             ?>
-                            <option value="<?php echo $kam->Ulica; ?> <?php echo $kam->Mesto; ?>"><?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?></option>
+                            <option value="<?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?>"><?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?></option>
                             <?php
                         }
                     }
@@ -51,20 +51,20 @@
     </div>
 
     <div class="form-group">
-        <label for="title" class="col-md-1 text-right">Auto_ID</label>
+        <label for="title" class="col-md-1 text-right">Auto</label>
         <div class="col-md-10">
             <select class="form-control" name="auto_id">
                 <?php
                 if($auto){
                     foreach($auto as $auto){
-                        if($auto->Auto_ID == $id->Auto_ID) {
+                        if($auto->ID == $id->Auto_ID) {
                             ?>
                             <option selected
-                                    value="<?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?>"><?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?></option>
+                                    value="<?php echo $auto->Znacka; ?>, <?php echo $auto->Typ; ?>"><?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?></option>
                             <?php
                         }else {
                             ?>
-                            <option value="<?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?>"><?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?></option>
+                            <option value="<?php echo $auto->Znacka; ?>, <?php echo $auto->Typ; ?>"><?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?></option>
                             <?php
                         }
                     }

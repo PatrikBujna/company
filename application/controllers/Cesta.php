@@ -39,8 +39,8 @@ class Cesta extends CI_Controller{
     public function edit($id){
         $data['id'] = $this->m->getCestaById($id);
         $data['odkial'] = $this->m->getAllOdkial();
-        $data['kam'] = $this->m->getKamGroupID();
-        $data['auto'] = $this->m->getAutoGroupID();
+        $data['kam'] = $this->m->getAllKam();
+        $data['auto'] = $this->m->getAllAuto();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('Cesta/edit', $data);
