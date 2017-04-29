@@ -15,10 +15,8 @@ class Sluzba_m extends CI_Model{
         }
     }
 
-    public function getSluzbaGroupID(){
-        $query = $this->db->query("SELECT s.Vodic_ID, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Sluzba s 
-                                    INNER JOIN Vodic v ON s.Vodic_ID = v.ID 
-                                    GROUP BY s.Vodic_ID");
+    public function getAllVodic(){
+        $query = $this->db->query("SELECT * FROM Vodic");
 
         if($query->num_rows() > 0){
             return $query->result();
@@ -34,13 +32,11 @@ class Sluzba_m extends CI_Model{
         $priezvisko = $parts[1];
 
 
-        $query = $this->db->query("SELECT s.Vodic_ID FROM Sluzba s 
-                                INNER JOIN Vodic v ON s.Vodic_ID = v.ID 
-                                WHERE v.Meno LIKE '$meno' AND v.Priezvisko LIKE '$priezvisko'
-                                GROUP BY s.Vodic_ID");
+        $query = $this->db->query("SELECT ID FROM Vodic 
+                                    WHERE Meno LIKE '$meno' AND Priezvisko LIKE '$priezvisko'");
 
         $result = $query->result();
-        $ID = $result[0]->Vodic_ID;
+        $ID = $result[0]->ID;
 
         $field = array(
             'Vodic_ID'=>$ID,
@@ -71,13 +67,11 @@ class Sluzba_m extends CI_Model{
         $meno = $parts[0];
         $priezvisko = $parts[1];
 
-        $query = $this->db->query("SELECT s.Vodic_ID FROM Sluzba s 
-                                INNER JOIN Vodic v ON s.Vodic_ID = v.ID 
-                                WHERE v.Meno LIKE '$meno' AND v.Priezvisko LIKE '$priezvisko'
-                                GROUP BY s.Vodic_ID");
+        $query = $this->db->query("SELECT ID FROM Vodic 
+                                    WHERE Meno LIKE '$meno' AND Priezvisko LIKE '$priezvisko'");
 
         $result = $query->result();
-        $ID = $result[0]->Vodic_ID;
+        $ID = $result[0]->ID;
 
         $field = array(
             'Vodic_ID'=>$ID,

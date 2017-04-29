@@ -17,7 +17,7 @@ class Sluzba extends CI_Controller{
     }
 
     public function add(){
-        $data['sluzba'] = $this->m->getSluzbaGroupID();
+        $data['sluzba'] = $this->m->getAllVodic();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('Sluzba/add', $data);
@@ -36,7 +36,7 @@ class Sluzba extends CI_Controller{
 
     public function edit($id){
         $data['id'] = $this->m->getSluzbaById($id);
-        $data['sluzba'] = $this->m->getSluzbaGroupID();
+        $data['sluzba'] = $this->m->getAllVodic();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('Sluzba/edit', $data);

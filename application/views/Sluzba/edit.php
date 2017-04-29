@@ -9,14 +9,14 @@
                 <?php
                 if($sluzba){
                     foreach($sluzba as $sluzba){
-                        if($sluzba->Vodic_ID == $id->Vodic_ID) {
+                        if($sluzba->ID == $id->Vodic_ID) {
                             ?>
                             <option selected
-                                    value="<?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?>"><?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?></option>
+                                    value="<?php echo $sluzba->Meno; ?> <?php echo $sluzba->Priezvisko; ?>"><?php echo $sluzba->Meno; ?> <?php echo $sluzba->Priezvisko; ?></option>
                             <?php
                         }else {
                             ?>
-                            <option value="<?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?>"><?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?></option>
+                            <option value="<?php echo $sluzba->Meno; ?> <?php echo $sluzba->Priezvisko; ?>"><?php echo $sluzba->Meno; ?> <?php echo $sluzba->Priezvisko; ?></option>
                             <?php
                         }
                     }
