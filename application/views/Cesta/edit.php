@@ -36,11 +36,11 @@
                         if($kam->Kam_ID == $id->Kam_ID) {
                             ?>
                             <option selected
-                                    value="<?php echo $kam->Kam_ID; ?>"><?php echo $kam->Kam_ID; ?></option>
+                                    value="<?php echo $kam->Ulica; ?> <?php echo $kam->Mesto; ?>"><?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?></option>
                             <?php
                         }else {
                             ?>
-                            <option value="<?php echo $kam->Kam_ID; ?>"><?php echo $kam->Kam_ID; ?></option>
+                            <option value="<?php echo $kam->Ulica; ?> <?php echo $kam->Mesto; ?>"><?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?></option>
                             <?php
                         }
                     }
@@ -60,11 +60,11 @@
                         if($auto->Auto_ID == $id->Auto_ID) {
                             ?>
                             <option selected
-                                    value="<?php echo $auto->Auto_ID; ?>"><?php echo $auto->Auto_ID; ?></option>
+                                    value="<?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?>"><?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?></option>
                             <?php
                         }else {
                             ?>
-                            <option value="<?php echo $auto->Auto_ID; ?>"><?php echo $auto->Auto_ID; ?></option>
+                            <option value="<?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?>"><?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?></option>
                             <?php
                         }
                     }

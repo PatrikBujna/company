@@ -8,7 +8,7 @@
                 if($vodic){
                     foreach($vodic as $vodic){
                         ?>
-                        <option value="<?php echo $vodic->vMeno; ?> <?php echo $vodic->vPriezvisko; ?>"><?php echo $vodic->vMeno; ?> <?php echo $vodic->vPriezvisko; ?></option>
+                        <option value="<?php echo $vodic->Meno; ?> <?php echo $vodic->Priezvisko; ?>"><?php echo $vodic->Meno; ?> <?php echo $vodic->Priezvisko; ?></option>
                         <?php
                     }
                 }

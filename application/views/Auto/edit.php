@@ -9,14 +9,14 @@
                 <?php
                 if($vodic){
                     foreach($vodic as $vodic){
-                        if($vodic->Vodic_ID == $auto->Vodic_ID) {
+                        if($vodic->ID == $auto->Vodic_ID) {
                             ?>
                             <option selected
-                                    value="<?php echo $vodic->vMeno; ?> <?php echo $vodic->vPriezvisko; ?>"><?php echo $vodic->vMeno; ?> <?php echo $vodic->vPriezvisko; ?></option>
+                                    value="<?php echo $vodic->Meno; ?> <?php echo $vodic->Priezvisko; ?>"><?php echo $vodic->Meno; ?> <?php echo $vodic->Priezvisko; ?></option>
                             <?php
                         }else {
                             ?>
-                            <option value="<?php echo $vodic->vMeno; ?> <?php echo $vodic->vPriezvisko; ?>"><?php echo $vodic->vMeno; ?> <?php echo $vodic->vPriezvisko; ?></option>
+                            <option value="<?php echo $vodic->Meno; ?> <?php echo $vodic->Priezvisko; ?>"><?php echo $vodic->Meno; ?> <?php echo $vodic->Priezvisko; ?></option>
                             <?php
                         }
                     }

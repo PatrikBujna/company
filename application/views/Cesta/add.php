@@ -9,7 +9,7 @@
                 if($odkial){
                     foreach($odkial as $odkial){
                         ?>
-                        <option value="<?php echo $odkial->Odkial_ID; ?>"><?php echo $odkial->Odkial_ID; ?></option>
+                        <option value="<?php echo $odkial->Ulica; ?> <?php echo $odkial->Mesto; ?>"><?php echo $odkial->Ulica; ?>, <?php echo $odkial->Mesto; ?></option>
                         <?php
                     }
                 }
@@ -26,7 +26,7 @@
                 if($kam){
                     foreach($kam as $kam){
                         ?>
-                        <option value="<?php echo $kam->Kam_ID; ?>"><?php echo $kam->Kam_ID; ?></option>
+                        <option value="<?php echo $kam->Ulica; ?> <?php echo $kam->Mesto; ?>"><?php echo $kam->Ulica; ?>, <?php echo $kam->Mesto; ?></option>
                         <?php
                     }
                 }
@@ -43,7 +43,7 @@
                 if($auto){
                     foreach($auto as $auto){
                         ?>
-                        <option value="<?php echo $auto->Auto_ID; ?>"><?php echo $auto->Auto_ID; ?></option>
+                        <option value="<?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?>"><?php echo $auto->Znacka; ?> <?php echo $auto->Typ; ?></option>
                         <?php
                     }
                 }

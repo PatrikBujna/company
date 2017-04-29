@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Cesta_m extends CI_Model{
 
     public function getCesta(){
-        $$query = $this->db->query("SELECT c.ID, o.Ulica AS oUlica, o.Mesto AS oMesto, k.Ulica AS kUlica, k.Mesto AS kMesto, a.Znacka, a.Typ, c.Cena, c.Datum FROM Cesta c 
+        $query = $this->db->query("SELECT c.ID, o.Ulica AS oUlica, o.Mesto AS oMesto, k.Ulica AS kUlica, k.Mesto AS kMesto, a.Znacka, a.Typ, c.Cena, c.Datum FROM Cesta c 
                                     INNER JOIN Odkial o ON o.ID = c.Odkial_ID
                                     INNER JOIN Kam k ON k.ID = c.Kam_ID
                                     INNER JOIN Auto a ON a.ID = c.Auto_ID");
@@ -17,8 +17,8 @@ class Cesta_m extends CI_Model{
         }
     }
 
-    public function getOdkialGroupID(){
-        $query = $this->db->query("SELECT c.Odkial_ID, o.Ulica, o.Mesto FROM Cesta c INNER JOIN Odkial o ON c.Odkial_ID = o.ID");
+    public function getAllOdkial(){
+        $query = $this->db->query("SELECT * FROM Odkial");
 
         if($query->num_rows() > 0){
             return $query->result();
@@ -27,8 +27,8 @@ class Cesta_m extends CI_Model{
         }
     }
 
-    public function getKamGroupID(){
-        $query = $this->db->query("SELECT Kam_ID FROM Cesta GROUP BY Kam_ID");
+    public function getAllKam(){
+        $query = $this->db->query("SELECT * FROM Kam");
 
         if($query->num_rows() > 0){
             return $query->result();
@@ -37,8 +37,8 @@ class Cesta_m extends CI_Model{
         }
     }
 
-    public function getAutoGroupID(){
-        $query = $this->db->query("SELECT Auto_ID FROM Cesta GROUP BY Auto_ID");
+    public function getAllAuto(){
+        $query = $this->db->query("SELECT * FROM Auto");
 
         if($query->num_rows() > 0){
             return $query->result();
