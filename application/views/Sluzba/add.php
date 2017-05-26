@@ -1,5 +1,5 @@
 <center><h3>Pridať záznam</h3></center><br>
-<form action="<?php echo base_url('index.php/Sluzba/submit') ?>" method="post" class="form-horizontal">
+<form action="<?php echo base_url('cesty.php/Sluzba/submit') ?>" method="post" class="form-horizontal">
     <div class="form-group">
         <label for="title" class="col-md-1 text-right">Vodic_ID</label>
         <div class="col-md-10">
@@ -30,7 +30,7 @@
         <div class="form-group">
             <label class="col-md-1 text-right"></label>
             <div class="col-md-10">
-                <a href="<?php echo base_url('index.php/Sluzba/index'); ?>"<button class="btn btn-danger btn-xs"><span class="glyphicon">&#xe257;Späť</span></button></a>
+                <a href="<?php echo base_url('cesty.php/Sluzba/index'); ?>"<button class="btn btn-danger btn-xs"><span class="glyphicon">&#xe257;Späť</span></button></a>
                 &nbsp;<button type="submit" name="btnSave" class="btn btn-success btn-xs"><i class="fa fa-check">&nbsp;Pridaj</i></button>
             </div>
         </div>

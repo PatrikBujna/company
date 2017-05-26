@@ -34,7 +34,7 @@
                     <span>Garfy</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="#">Graf 1</a></li>
+                    <li><a  href="<?php echo base_url(); ?>index.php/Chart_cesty/cesty">Cesty</a></li>
                     <li><a  href="#">Graf 2</a></li>
                     <li><a  href="#">Graf 3</a></li>
                     <li><a  href="#">Graf 4</a></li>

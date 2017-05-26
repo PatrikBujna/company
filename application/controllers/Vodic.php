@@ -6,10 +6,23 @@ class Vodic extends CI_Controller{
     function __construct(){
         parent:: __construct();
         $this->load->model('Vodic_m', 'm');
+        $this->load->library('pagination');
     }
 
     function index(){
+
+
+        // Load the tables library
+        $this->load->library('table');
+        // Query the database and get results
         $data['vodic'] = $this->m->getVodic();
+
+
+
+
+
+
+
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('Vodic/index', $data);
@@ -30,7 +43,7 @@ class Vodic extends CI_Controller{
         }else{
             $this->session->set_flashdata('error_msg', 'Chyba v pridaní záznamu');
         }
-        redirect(base_url('index.php/Vodic/index'));
+        redirect(base_url('cesty.php/Vodic/index'));
     }
 
     public function edit($id){
@@ -48,7 +61,7 @@ class Vodic extends CI_Controller{
         }else{
             $this->session->set_flashdata('error_msg', 'Chyba v zmenení záznamu');
         }
-        redirect(base_url('/index.php/Vodic/index'));
+        redirect(base_url('/cesty.php/Vodic/index'));
     }
 
     public function delete($id){
@@ -58,7 +71,7 @@ class Vodic extends CI_Controller{
         }else{
             $this->session->set_flashdata('error_msg', 'Chyba vo vymazaní záznamu');
         }
-        redirect(base_url('index.php/Vodic/index'));
+        redirect(base_url('cesty.php/Vodic/index'));
     }
 
 }

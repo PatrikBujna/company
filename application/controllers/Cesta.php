@@ -9,7 +9,18 @@ class Cesta extends CI_Controller{
     }
 
     function index(){
-        $data['cesta'] = $this->m->getCesta();
+        $this->load->library("pagination");
+
+        $config['base_url'] = base_url() . 'Cesta/index';
+        $config['uri_segment'] = 3;
+        $config['per_page'] = 1;
+        $config['total_rows'] = 200; //sample
+
+        $this->pagination->initialize($config);
+        $page = $this->uri->segment(3,0);
+
+        $data['cesta'] = $this->m->getCesta($config['per_page'], $page);
+
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('Cesta/index', $data);
@@ -33,7 +44,7 @@ class Cesta extends CI_Controller{
         }else{
             $this->session->set_flashdata('error_msg', 'Chyba v pridaní záznamu');
         }
-        redirect(base_url('index.php/Cesta/index'));
+        redirect(base_url('cesty.php/Cesta/index'));
     }
 
     public function edit($id){
@@ -54,7 +65,7 @@ class Cesta extends CI_Controller{
         }else{
             $this->session->set_flashdata('error_msg', 'Chyba v zmenení záznamu');
         }
-        redirect(base_url('/index.php/Cesta/index'));
+        redirect(base_url('/cesty.php/Cesta/index'));
     }
 
     public function delete($id){
@@ -64,7 +75,7 @@ class Cesta extends CI_Controller{
         }else{
             $this->session->set_flashdata('error_msg', 'Chyba vo vymazaní záznamu');
         }
-        redirect(base_url('index.php/Cesta/index'));
+        redirect(base_url('cesty.php/Cesta/index'));
     }
 
 }

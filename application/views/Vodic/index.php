@@ -20,7 +20,7 @@ if($this->session->flashdata('error_msg')){
 ?>
 
 <center><h3>Tabuľka Vodič &nbsp;&nbsp;
-        <a href="<?php echo base_url('index.php/Vodic/add'); ?>" class="btn btn-success btn-xs""><span class="glyphicon">&#x2b;</span>&nbsp;Pridať záznam</a></h3></center><br>
+        <a href="<?php echo base_url('cesty.php/Vodic/add'); ?>" class="btn btn-success btn-xs""><span class="glyphicon">&#x2b;</span>&nbsp;Pridať záznam</a></h3></center><br>
 <table class="table table-bordered table-responsive">
     <thead>
     <tr>
@@ -42,13 +42,14 @@ if($this->session->flashdata('error_msg')){
                 <td><?php echo $vodic->Priezvisko; ?></td>
                 <td><?php echo $vodic->Kontakt; ?></td>
                 <td>
-                    <a href="<?php echo base_url('index.php/Vodic/edit/'.$vodic->ID); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                    <a href="<?php echo base_url('index.php/Vodic/delete/'.$vodic->ID); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Naozaj chcete vymazať tento záznam?');"><i class="fa fa-trash-o "></i></a>
+                    <a href="<?php echo base_url('cesty.php/Vodic/edit/'.$vodic->ID); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                    <a href="<?php echo base_url('cesty.php/Vodic/delete/'.$vodic->ID); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Naozaj chcete vymazať tento záznam?');"><i class="fa fa-trash-o "></i></a>
                 </td>
             </tr>
             <?php
         }
     }
     ?>
+
     </tbody>
 </table>

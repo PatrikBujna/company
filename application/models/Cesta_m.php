@@ -4,11 +4,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cesta_m extends CI_Model{
 
-    public function getCesta(){
+    public function record_count() {
+        return $this->db->count_all("Cesta");
+    }
+
+    public function fetch_countries($limit, $start) {
+        $this->db->limit($limit, $start);
+        $query = $this->db->get("Cesta");
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+    }
+
+    public function getCesta($limit, $start){
         $query = $this->db->query("SELECT c.ID, o.Ulica AS oUlica, o.Mesto AS oMesto, k.Ulica AS kUlica, k.Mesto AS kMesto, a.Znacka, a.Typ, c.Cena, c.Datum FROM Cesta c 
                                     INNER JOIN Odkial o ON o.ID = c.Odkial_ID
                                     INNER JOIN Kam k ON k.ID = c.Kam_ID
                                     INNER JOIN Auto a ON a.ID = c.Auto_ID");
+
+        $this->db->limit($limit, $start);
 
         if($query->num_rows() > 0){
             return $query->result();
@@ -18,7 +37,7 @@ class Cesta_m extends CI_Model{
     }
 
     public function getAllOdkial(){
-        $query = $this->db->query("SELECT * FROM Odkial");
+        $query = $this->db->get("Odkial");
 
         if($query->num_rows() > 0){
             return $query->result();
@@ -28,7 +47,7 @@ class Cesta_m extends CI_Model{
     }
 
     public function getAllKam(){
-        $query = $this->db->query("SELECT * FROM Kam");
+        $query = $this->db->get("Kam");
 
         if($query->num_rows() > 0){
             return $query->result();
@@ -38,7 +57,7 @@ class Cesta_m extends CI_Model{
     }
 
     public function getAllAuto(){
-        $query = $this->db->query("SELECT * FROM Auto");
+        $query = $this->db->get("Auto");
 
         if($query->num_rows() > 0){
             return $query->result();
