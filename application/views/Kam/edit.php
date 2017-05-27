@@ -1,6 +1,6 @@
 <center><h3>Zmena záznamu</h3></center><br>
 
-<form action="<?php echo base_url('cesty.php/Kam/update') ?>" method="post" class="form-horizontal">
+<form action="<?php echo base_url('index.php/Kam/update') ?>" method="post" class="form-horizontal">
     <input type="hidden" name="txt_hidden" value="<?php echo $kam->ID; ?>">
     <div class="form-group">
         <label for="title" class="col-md-1 text-right">Ulica</label>
@@ -20,7 +20,7 @@
         <div class="form-group">
             <label class="col-md-1 text-right"></label>
             <div class="col-md-10">
-                <a href="<?php echo base_url('cesty.php/Kam/index'); ?>"<button class="btn btn-danger btn-xs"><span class="glyphicon">&#xe257;Späť</span></button></a>
+                <a href="<?php echo base_url('index.php/Kam/index'); ?>"<button class="btn btn-danger btn-xs"><span class="glyphicon">&#xe257;Späť</span></button></a>
                 &nbsp;<button type="submit" name="btnSave" class="btn btn-success btn-xs"><i class="fa fa-check">&nbsp;Zmeň</i></button>
             </div>
         </div>

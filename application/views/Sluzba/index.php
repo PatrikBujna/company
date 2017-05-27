@@ -20,7 +20,7 @@ if($this->session->flashdata('error_msg')){
 ?>
 
 <center><h3>Tabuľka Služba &nbsp;&nbsp;
-        <a href="<?php echo base_url('cesty.php/Sluzba/add'); ?>" class="btn btn-success btn-xs""><span class="glyphicon">&#x2b;</span>&nbsp;Pridať záznam</a></h3></center><br>
+        <a href="<?php echo base_url('index.php/Sluzba/add'); ?>" class="btn btn-success btn-xs""><span class="glyphicon">&#x2b;</span>&nbsp;Pridať záznam</a></h3></center><br>
 <table class="table table-bordered table-responsive">
     <thead>
     <tr>
@@ -40,8 +40,8 @@ if($this->session->flashdata('error_msg')){
                 <td><?php echo $sluzba->vMeno; ?> <?php echo $sluzba->vPriezvisko; ?></td>
                 <td><?php echo $sluzba->Datum; ?></td>
                 <td>
-                    <a href="<?php echo base_url('cesty.php/Sluzba/edit/'.$sluzba->ID); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                    <a href="<?php echo base_url('cesty.php/Sluzba/delete/'.$sluzba->ID); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Naozaj chcete vymazať tento záznam?');"><i class="fa fa-trash-o "></i></a>
+                    <a href="<?php echo base_url('index.php/Sluzba/edit/'.$sluzba->ID); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                    <a href="<?php echo base_url('index.php/Sluzba/delete/'.$sluzba->ID); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Naozaj chcete vymazať tento záznam?');"><i class="fa fa-trash-o "></i></a>
                 </td>
             </tr>
             <?php

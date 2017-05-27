@@ -46,6 +46,5 @@
     </div>
 </aside>
 <!--sidebar end-->
-<section id="container" >
     <section id="main-content">
-        <section class="wrapper">
+        <section class="wrapper site-min-height">

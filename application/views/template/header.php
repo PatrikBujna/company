@@ -26,7 +26,7 @@
     <script src="<?php echo base_url(); ?>assets/css/fusioncharts.js"></script>
 </head>
 <body>
-
+<section id="container" >
 <!--header start-->
 <header class="header black-bg">
     <div class="sidebar-toggle-box">

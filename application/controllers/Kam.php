@@ -30,7 +30,7 @@ class Kam extends CI_Controller{
         }else{
             $this->session->set_flashdata('error_msg', 'Chyba v pridaní záznamu');
         }
-        redirect(base_url('cesty.php/Kam/index'));
+        redirect(base_url('index.php/Kam/index'));
     }
 
     public function edit($id){
@@ -48,7 +48,7 @@ class Kam extends CI_Controller{
         }else{
             $this->session->set_flashdata('error_msg', 'Chyba v zmenení záznamu');
         }
-        redirect(base_url('/cesty.php/Kam/index'));
+        redirect(base_url('/index.php/Kam/index'));
     }
 
     public function delete($id){
@@ -58,7 +58,7 @@ class Kam extends CI_Controller{
         }else{
             $this->session->set_flashdata('error_msg', 'Chyba vo vymazaní záznamu');
         }
-        redirect(base_url('cesty.php/Kam/index'));
+        redirect(base_url('index.php/Kam/index'));
     }
 
 }
