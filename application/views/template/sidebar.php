@@ -31,13 +31,13 @@
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class=" fa fa-bar-chart-o"></i>
-                    <span>Garfy</span>
+                    <span>Grafy</span>
                 </a>
                 <ul class="sub">
                     <li><a  href="<?php echo base_url(); ?>index.php/Chart_cesty/cesty">Cesty</a></li>
                     <li><a  href="<?php echo base_url(); ?>index.php/Chart_sluzby/sluzby">Služby</a></li>
                     <li><a  href="<?php echo base_url(); ?>index.php/Chart_destinacie/destinacie">Destinácie</a></li>
-                    <li><a  href="#">Graf 4</a></li>
+                    <li><a  href="<?php echo base_url(); ?>index.php/Chart_odchod/odchod">Miesta odchodu</a></li>
                 </ul>
             </li>
 

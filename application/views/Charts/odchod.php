@@ -2,15 +2,18 @@
 <script type="text/javascript">
     google.charts.load('current', {'packages': ['geochart']});
     google.charts.setOnLoadCallback(drawMarkersMap);
+
     function drawMarkersMap() {
         var data = google.visualization.arrayToDataTable([
             ['Mesto', 'pocet'],
             <?php
-            foreach ($destinacie as $destinacie) {
-                echo "[ '$destinacie->Mesto', $destinacie->pocet],";
+            foreach ($odchod as $odchod) {
+                echo "[ '$odchod->Mesto', $odchod->pocet],";
             }
             ?>
+
         ]);
+
         var options = {
             region: 'SK',
             displayMode: 'markers',
@@ -23,5 +26,5 @@
 
 <br><br>
 <center>
-    <h3>Frekvencia destinačných miest</h3><br><br>
+    <h3>Frekvencia miest odchodu</h3><br><br>
     <div id="chart_div" style="width: 900px; height: 500px;"></div>
