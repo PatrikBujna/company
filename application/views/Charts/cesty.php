@@ -31,29 +31,3 @@
     <center>
         <h3>Počet ciest v jednotlivých mesiacoch</h3><br><br>
         <div id="piechart" style="width: 900px; height: 500px;"></div></center>
-
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-        google.load('visualization', '1.0', {'packages':['corechart']});
-        google.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Rep');
-            data.addColumn('number', 'Assigned Leads');
-            data.addRows([
-            <?php echo $url; ?> ;
-        ]);
-
-            // Set chart options
-            var options = {'title':'How Many children in each Frindly Space',
-                'width':600,
-                'height':500};
-
-            // Instantiate and draw our chart, passing in some options.
-            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
-        }
-    </script>
