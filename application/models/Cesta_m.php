@@ -21,13 +21,23 @@ class Cesta_m extends CI_Model{
         return false;
     }
 
-    public function getCesta($limit, $start){
-        $query = $this->db->query("SELECT c.ID, o.Ulica AS oUlica, o.Mesto AS oMesto, k.Ulica AS kUlica, k.Mesto AS kMesto, a.Znacka, a.Typ, c.Cena, c.Datum FROM Cesta c 
+    public function getCesta($limit = 0, $offset = 0){
+        if($offset != NULL) {
+            $query = $this->db->query("SELECT c.ID, o.Ulica AS oUlica, o.Mesto AS oMesto, k.Ulica AS kUlica, k.Mesto AS kMesto, a.Znacka, a.Typ, c.Cena, c.Datum FROM Cesta c 
                                     INNER JOIN Odkial o ON o.ID = c.Odkial_ID
                                     INNER JOIN Kam k ON k.ID = c.Kam_ID
-                                    INNER JOIN Auto a ON a.ID = c.Auto_ID");
+                                    INNER JOIN Auto a ON a.ID = c.Auto_ID
+                                    ORDER BY c.ID
+                                    LIMIT $offset, $limit");
+        }else{
+            $query = $this->db->query("SELECT c.ID, o.Ulica AS oUlica, o.Mesto AS oMesto, k.Ulica AS kUlica, k.Mesto AS kMesto, a.Znacka, a.Typ, c.Cena, c.Datum FROM Cesta c 
+                                    INNER JOIN Odkial o ON o.ID = c.Odkial_ID
+                                    INNER JOIN Kam k ON k.ID = c.Kam_ID
+                                    INNER JOIN Auto a ON a.ID = c.Auto_ID
+                                    ORDER BY c.ID
+                                    LIMIT 0, $limit");
+        }
 
-        $this->db->limit($limit, $start);
 
         if($query->num_rows() > 0){
             return $query->result();

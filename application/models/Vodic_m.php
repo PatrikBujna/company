@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Vodic_m extends CI_Model{
 
-    public function getVodic(){
-        $query = $this->db->get('Vodic');
+    public function getVodic($limit = 0, $offset = 0){
+        $query = $this->db->get('Vodic', $limit, $offset);
         if($query->num_rows() > 0){
             return $query->result();
         }else{

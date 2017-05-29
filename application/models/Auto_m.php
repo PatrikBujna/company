@@ -4,10 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auto_m extends CI_Model{
 
-    public function getAuto(){
-        $query = $this->db->query("SELECT a.ID, a.Znacka, a.Typ, a.SPZ, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Auto a 
-                                    INNER JOIN Vodic v ON a.Vodic_ID = v.ID");
-
+    public function getAuto($limit = 0, $offset = 0){
+        if($offset != NULL) {
+            $query = $this->db->query("SELECT a.ID, a.Znacka, a.Typ, a.SPZ, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Auto a 
+                                    INNER JOIN Vodic v ON a.Vodic_ID = v.ID ORDER BY ID LIMIT $offset, $limit");
+        }else {
+            $query = $this->db->query("SELECT a.ID, a.Znacka, a.Typ, a.SPZ, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Auto a 
+                                    INNER JOIN Vodic v ON a.Vodic_ID = v.ID ORDER BY ID LIMIT 0, $limit");
+        }
         if($query->num_rows() > 0){
             return $query->result();
         }else{

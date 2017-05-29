@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Kam_m extends CI_Model{
 
-    public function getKam(){
-        $query = $this->db->get('Kam');
+    public function getKam($limit = 0, $offset = 0){
+        $query = $this->db->get('Kam', $limit, $offset);
         if($query->num_rows() > 0){
             return $query->result();
         }else{

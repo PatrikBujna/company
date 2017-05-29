@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Odkial_m extends CI_Model{
 
-    public function getOdkial(){
-        $query = $this->db->get('Odkial');
+    public function getOdkial($limit = 0, $offset = 0){
+        $query = $this->db->get('Odkial', $limit, $offset);
         if($query->num_rows() > 0){
             return $query->result();
         }else{

@@ -53,3 +53,7 @@ if($this->session->flashdata('error_msg')){
 
     </tbody>
 </table>
+
+<center>
+    <? echo $this->pagination->create_links() ?>
+</center>

@@ -4,9 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Sluzba_m extends CI_Model{
 
-    public function getSluzba(){
-        $query = $this->db->query("SELECT s.ID, s.Datum, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Sluzba s 
-                                    INNER JOIN Vodic v ON s.Vodic_ID = v.ID ORDER BY s.ID ");
+    public function getSluzba($limit = 0, $offset = 0){
+        if($offset != NULL) {
+            $query = $this->db->query("SELECT s.ID, s.Datum, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Sluzba s 
+                                    INNER JOIN Vodic v ON s.Vodic_ID = v.ID ORDER BY s.ID LIMIT $offset, $limit");
+        }else{
+            $query = $this->db->query("SELECT s.ID, s.Datum, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko FROM Sluzba s 
+                                    INNER JOIN Vodic v ON s.Vodic_ID = v.ID ORDER BY s.ID LIMIT 0, $limit");
+        }
 
         if($query->num_rows() > 0){
             return $query->result();
