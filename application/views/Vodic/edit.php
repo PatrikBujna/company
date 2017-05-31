@@ -37,7 +37,6 @@
         </div>
     </div>
 
-
     <div class="form-group">
         <label for="title" class="col-md-1 text-right">Role</label>
         <div class="col-md-10">

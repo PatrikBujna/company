@@ -4,7 +4,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
 
-            <p class="centered"><a href="#"><img src="<?php echo base_url(); ?>assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+            <p class="centered"><img src="<?php echo base_url(); ?>assets/img/ui-sam.jpg" class="img-circle" width="60"></p>
             <h5 class="centered">
                 <?php
                     $username = $this->session->userdata('username');
@@ -18,7 +18,7 @@
             </h5>
 
             <li class="mt">
-                <a class="active" href="<?php echo base_url(); ?>">
+                <a class="active" href="<?php echo base_url() . "index.php/Home/index" ?>">
                     <i class="fa fa-dashboard"></i>
                     <span>Domov</span>
                 </a>

@@ -32,12 +32,6 @@
 
         <br><br><br>
 
-
-        <label>File input</label>
-        <input type="file" />
-
-
-
         <div class="row">
             <div class="col-lg-9 main-chart">
 

@@ -33,9 +33,6 @@ if($this->session->flashdata('error_msg')){
         <?php endif; ?>
 
     </h3><br>
-    <input>
-    <button>Hladať</button>
-    <br><br>
 </center>
 <table class="table table-bordered table-responsive">
     <thead>

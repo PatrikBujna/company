@@ -54,6 +54,16 @@ class Auto_m extends CI_Model{
         }
     }
 
+    function get_search() {
+        $match = $this->input->post('search');
+        $this->db->like('ID',$match);
+        $this->db->or_like('Znacka',$match);
+        $this->db->or_like('Typ',$match);
+        $this->db->or_like('SPZ',$match);
+        $query = $this->db->get('Auto');
+        return $query->result();
+    }
+
     public function getAutoById($id){
         $this->db->where('ID', $id);
         $query = $this->db->get('Auto');
