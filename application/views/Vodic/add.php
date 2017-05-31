@@ -22,6 +22,30 @@
         </div>
     </div>
 
+    <div class="form-group">
+        <label for="description" class="col-md-1 text-right">Email</label>
+        <div class="col-md-10">
+            <input type="text" name="username" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description" class="col-md-1 text-right">Heslo</label>
+        <div class="col-md-10">
+            <input type="text" name="password" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description" class="col-md-1 text-right">Role</label>
+        <div class="col-md-10">
+            <select class="form-control" name="role">
+                <option value="admin">admin</option>
+                <option value="user">user</option>
+            </select>
+        </div>
+    </div>
+
     <center>
         <div class="form-group">
             <label class="col-md-1 text-right"></label>

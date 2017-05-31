@@ -8,7 +8,6 @@ if($this->session->flashdata('success_msg')){
 }
 ?>
 
-
 <?php
 if($this->session->flashdata('error_msg')){
     ?>
@@ -19,8 +18,25 @@ if($this->session->flashdata('error_msg')){
 }
 ?>
 
-<center><h3>Tabuľka Auto  &nbsp;&nbsp;
-        <a href="<?php echo base_url('index.php/Auto/add'); ?>" class="btn btn-success btn-xs""><span class="glyphicon">&#x2b;</span>&nbsp;Pridať záznam</a></h3></center><br>
+<?php
+    $username = $this->session->userdata('username');
+    $query = $this->db->query("SELECT role FROM `Vodic` WHERE username LIKE '$username'");
+    $result = $query->result();
+    $role = $result[0]->role;
+?>
+
+
+<center>
+    <h3>Tabuľka Auto  &nbsp;&nbsp;
+        <?php if ($role == 'admin'): ?>
+            <a href="<?php echo base_url('index.php/Auto/add'); ?>" class="btn btn-success btn-xs""><span class="glyphicon">&#x2b;</span>&nbsp;Pridať záznam</a>
+        <?php endif; ?>
+
+    </h3><br>
+    <input>
+    <button>Hladať</button>
+    <br><br>
+</center>
 <table class="table table-bordered table-responsive">
     <thead>
     <tr>
@@ -29,7 +45,9 @@ if($this->session->flashdata('error_msg')){
         <th>Znacka</th>
         <th>Typ</th>
         <th>SPZ</th>
-        <th>Action</th>
+        <?php if ($role == 'admin'): ?>
+            <th>Action</th>
+        <?php endif; ?>
     </tr>
     </thead>
     <tbody>
@@ -43,10 +61,12 @@ if($this->session->flashdata('error_msg')){
                 <td><?php echo $auto->Znacka; ?></td>
                 <td><?php echo $auto->Typ; ?></td>
                 <td><?php echo $auto->SPZ; ?></td>
-                <td>
-                    <a href="<?php echo base_url('index.php/Auto/edit/'.$auto->ID); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                    <a href="<?php echo base_url('index.php/Auto/delete/'.$auto->ID); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Naozaj chcete vymazať tento záznam?');"><i class="fa fa-trash-o "></i></a>
-                </td>
+                <?php if ($role == 'admin'): ?>
+                    <td>
+                        <a href="<?php echo base_url('index.php/Auto/edit/'.$auto->ID); ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                        <a href="<?php echo base_url('index.php/Auto/delete/'.$auto->ID); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Naozaj chcete vymazať tento záznam?');"><i class="fa fa-trash-o "></i></a>
+                    </td>
+                <?php endif; ?>
             </tr>
             <?php
         }

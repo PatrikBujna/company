@@ -17,7 +17,10 @@ class Vodic_m extends CI_Model{
         $field = array(
             'Meno'=>$this->input->post('meno'),
             'Priezvisko'=>$this->input->post('priezvisko'),
-            'Kontakt'=>$this->input->post('kontakt')
+            'Kontakt'=>$this->input->post('kontakt'),
+            'username'=>$this->input->post('username'),
+            'password'=>$this->input->post('password'),
+            'role'=>$this->input->post('role')
         );
         $this->db->insert('Vodic', $field);
         if($this->db->affected_rows() > 0){
@@ -42,7 +45,10 @@ class Vodic_m extends CI_Model{
         $field = array(
             'Meno'=>$this->input->post('meno'),
             'Priezvisko'=>$this->input->post('priezvisko'),
-            'Kontakt'=>$this->input->post('kontakt')
+            'Kontakt'=>$this->input->post('kontakt'),
+            'username'=>$this->input->post('username'),
+            'password'=>$this->input->post('password'),
+            'role'=>$this->input->post('role')
         );
         $this->db->where('ID', $id);
         $this->db->update('Vodic', $field);

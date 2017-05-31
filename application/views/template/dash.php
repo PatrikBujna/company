@@ -1,6 +1,5 @@
 <section id="main-content">
     <section class="wrapper">
-
         <center>
             <div class="row mt">
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 desc">

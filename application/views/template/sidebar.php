@@ -5,7 +5,17 @@
         <ul class="sidebar-menu" id="nav-accordion">
 
             <p class="centered"><a href="#"><img src="<?php echo base_url(); ?>assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-            <h5 class="centered">Patrik Bujna</h5>
+            <h5 class="centered">
+                <?php
+                    $username = $this->session->userdata('username');
+                    $query = $this->db->query("SELECT Meno, Priezvisko, role FROM `Vodic` WHERE username LIKE '$username'");
+                    $result = $query->result();
+                    $meno = $result[0]->Meno;
+                    $priezvisko = $result[0]->Priezvisko;
+                    $role = $result[0]->role;
+                    echo $meno.' '.$priezvisko;
+                ?>
+            </h5>
 
             <li class="mt">
                 <a class="active" href="<?php echo base_url(); ?>">
@@ -25,7 +35,9 @@
                     <li><a href="<?php echo base_url(); ?>index.php/Kam/index">Kam</a></li>
                     <li><a href="<?php echo base_url(); ?>index.php/Odkial/index">Odkial</a></li>
                     <li><a href="<?php echo base_url(); ?>index.php/Sluzba/index">Služba</a></li>
-                    <li><a href="<?php echo base_url(); ?>index.php/Vodic/index">Vodič</a></li>
+                    <?php if ($role == 'admin'): ?>
+                        <li><a href="<?php echo base_url(); ?>index.php/Vodic/index">Vodič</a></li>
+                    <?php endif; ?>
                 </ul>
             </li>
             <li class="sub-menu">

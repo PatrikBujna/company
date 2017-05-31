@@ -33,13 +33,13 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
     </div>
     <!--logo start-->
-    <a href="index.html" class="logo"><b>Company</b></a>
+    <a href="index.html" class="logo"><b>Company TAXI</b></a>
     <!--logo end-->
     <div class="nav notify-row" id="top_menu">
     </div>
     <div class="top-menu">
         <ul class="nav pull-right top-menu">
-            <li><a class="logout" href="login.html">Logout</a></li>
+            <li><a class="logout" href="<?php echo base_url(); ?>index.php/Login/logout">Odhlásiť</a></li>
         </ul>
     </div>
 </header>
