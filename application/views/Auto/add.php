@@ -35,12 +35,6 @@
             <input type="text" name="spz" class="form-control" required>
         </div>
     </div>
-    <div class="form-group">
-        <label for="description" class="col-md-1 text-right">Fotka</label>
-        <div class="col-md-10">
-            <input type="file" name="userfile" size="20" required/>
-        </div>
-    </div>
 
     <center>
         <div class="form-group">

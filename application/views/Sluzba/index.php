@@ -67,5 +67,5 @@ if($this->session->flashdata('error_msg')){
 </table>
 
 <center>
-    <? echo $this->pagination->create_links() ?>
+    <?php echo $this->pagination->create_links() ?>
 </center>
